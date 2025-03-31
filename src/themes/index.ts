@@ -1,15 +1,11 @@
 const theme = {
   COLORS: {
-    // product
-    YELLOW: '#DBAC2C',
-    YELLOW_DARK: '#C47F17',
+    PRIMARY: '#008550',
+    PRIMARY_DARK: '#012500',
+    PRIMARY_LIGHT: '#D9FFCB',
 
-    PURPLE: '#8047F8',
-    PURPLE_LIGHT: '#EBE5F9',
-    PURPLE_DARK: '#4B2995',
-
-    // base
     WHITE: '#FFFFFF',
+    BLACK: '#000000',
     GRAY_100: '#272221',
     GRAY_200: '#403937',
     GRAY_300: '#574F4D',
@@ -20,7 +16,6 @@ const theme = {
     GRAY_800: '#F3F2F2',
     GRAY_900: '#FAFAFA',
 
-    // feedback
     RED: '#E8BAAB',
     RED_LIGHT: '#F2DFD8',
     RED_DARK: '#C44117',
@@ -35,21 +30,12 @@ const theme = {
     },
   },
   FONT_SIZE: {
-    TEXT: {
-      XS: 12,
-      SM: 14,
-      MD: 16,
-      LG: 20,
-    },
-    TITLE: {
-      XS: 14,
-      SM: 16,
-      MD: 20,
-      LG: 24,
-      XL: 36,
-    },
-    TAG: 10,
-    BUTTON: 14,
+    XS: 12,
+    SM: 14,
+    MD: 16,
+    LG: 20,
+    XG: 24,
+    XXG: 32,
   },
 }
 

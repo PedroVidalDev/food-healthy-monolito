@@ -30,14 +30,14 @@ export default function App() {
 
 const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.COLORS.PURPLE};
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_DARK};
   align-items: center;
   justify-content: center;
 `
 
 const Title = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.FONT_SIZE.TITLE.LG}px;
+    font-size: ${theme.FONT_SIZE.XXG}px;
     font-family: ${theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
     color: ${theme.COLORS.WHITE};
   `}
