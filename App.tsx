@@ -33,5 +33,7 @@ const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.COLORS.WHITE};
 
+  justify-content: flex-start;
+
   padding: 0 12px;
 `
