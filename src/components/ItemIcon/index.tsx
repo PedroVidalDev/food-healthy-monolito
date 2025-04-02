@@ -6,7 +6,7 @@ export const ItemIcon = (props: ItemIconProps) => {
   return (
     <Container>
       <ItemImage source={categoryIcons[props.image]} />
-      <Title> {props.text} </Title>
+      {props.text && <Title> {props.text} </Title>}
     </Container>
   )
 }
