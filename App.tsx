@@ -1,12 +1,13 @@
 /* eslint-disable camelcase */
 import theme from '@theme/index'
 import { Baloo2_700Bold } from '@expo-google-fonts/baloo-2'
-import styled, { css, ThemeProvider } from 'styled-components/native'
+import styled, { ThemeProvider } from 'styled-components/native'
 import {
   useFonts,
   Roboto_400Regular,
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto'
+import { Home } from 'src/pages/Home'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,7 +23,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Title>Food Healthy....</Title>
+        <Home />
       </Container>
     </ThemeProvider>
   )
@@ -30,15 +31,7 @@ export default function App() {
 
 const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.COLORS.PRIMARY_DARK};
-  align-items: center;
-  justify-content: center;
-`
+  background-color: ${({ theme }) => theme.COLORS.WHITE};
 
-const Title = styled.Text`
-  ${({ theme }) => css`
-    font-size: ${theme.FONT_SIZE.XXG}px;
-    font-family: ${theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
-    color: ${theme.COLORS.WHITE};
-  `}
+  padding: 0 12px;
 `
