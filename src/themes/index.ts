@@ -1,8 +1,8 @@
 const theme = {
   COLORS: {
-    PRIMARY: '#008550',
-    PRIMARY_DARK: '#012500',
-    PRIMARY_LIGHT: '#D9FFCB',
+    PRIMARY: '#84FFD8',
+    PRIMARY_DARK: '#50AA86',
+    PRIMARY_LIGHT: '#E6FCF5',
 
     WHITE: '#FFFFFF',
     BLACK: '#000000',
@@ -22,10 +22,12 @@ const theme = {
   },
   FONT_FAMILY: {
     BALOO2: {
+      BALOO2_SEMIBOLD: 'Baloo2_600SemiBold',
       BALOO2_BOLD: 'Baloo2_700Bold',
     },
     ROBOTO: {
       ROBOTO_REGULAR: 'Roboto_400Regular',
+      ROBOTO_MEDIUM: 'Roboto_500Medium',
       ROBOTO_BOLD: 'Roboto_700Bold',
     },
   },
