@@ -34,10 +34,10 @@ export const Image = styled.Image`
 export const TextContainer = styled.View`
   display: flex;
   flex: 1;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
-  padding-left: 12px;
+  padding: 16px 12px;
 `
 
 export const TextContainerAdjust = styled.View`
