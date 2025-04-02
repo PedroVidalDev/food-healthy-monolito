@@ -2,6 +2,9 @@ import styled, { css } from 'styled-components/native'
 
 export const Container = styled.View`
   display: flex;
+
+  gap: 12px;
+
   flex: 1;
 `
 
@@ -75,4 +78,19 @@ export const CategoryCardsRow = styled.View`
   flex-direction: row;
 
   gap: 8px;
+`
+
+export const ItemsContainer = styled.View`
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+`
+
+export const ItemContainerTitle = styled.Text`
+  ${({ theme }) => css`
+    font-family: ${theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
+    font-size: ${theme.FONT_SIZE.SM}px;
+    color: ${theme.COLORS.BLACK};
+  `}
 `

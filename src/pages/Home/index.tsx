@@ -1,4 +1,5 @@
 import { ItemIcon } from '@components/ItemIcon'
+import { ItemIconExpanded } from '@components/ItemIconExpanded'
 
 import { categories } from 'src/consts/category'
 
@@ -13,9 +14,12 @@ import {
   CategoryTitle,
   Container,
   Description,
+  ItemContainerTitle,
+  ItemsContainer,
   Text,
   Title,
 } from './styles'
+import { items } from 'src/consts/item'
 
 export const Home = () => {
   return (
@@ -43,6 +47,17 @@ export const Home = () => {
           ))}
         </CategoryCards>
       </CategoryContainer>
+      <ItemsContainer>
+        <ItemContainerTitle> Últimos pedidos </ItemContainerTitle>
+        {items.map((item, index) => (
+          <ItemIconExpanded
+            key={index}
+            title={item.title}
+            price={item.price}
+            description={item.description}
+          />
+        ))}
+      </ItemsContainer>
     </Container>
   )
 }
