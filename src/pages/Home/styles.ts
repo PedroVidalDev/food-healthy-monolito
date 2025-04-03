@@ -15,7 +15,7 @@ export const Banner = styled.View`
   align-items: center;
   justify-content: center;
 
-  gap: 12px;
+  gap: 24px;
 
   height: 160px;
 
@@ -34,7 +34,7 @@ export const Description = styled.View`
 export const Title = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.ROBOTO.ROBOTO_BOLD};
-    font-size: ${theme.FONT_SIZE.LG}px;
+    font-size: ${theme.FONT_SIZE.XG}px;
     color: ${theme.COLORS.WHITE};
   `}
 `
@@ -42,7 +42,7 @@ export const Title = styled.Text`
 export const Text = styled.Text`
   ${({ theme }) => css`
     font-family: ${theme.FONT_FAMILY.ROBOTO.ROBOTO_REGULAR};
-    font-size: ${theme.FONT_SIZE.SM}px;
+    font-size: ${theme.FONT_SIZE.MD}px;
     color: ${theme.COLORS.WHITE};
   `}
 `
