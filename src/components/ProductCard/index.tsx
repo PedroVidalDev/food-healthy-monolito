@@ -15,7 +15,7 @@ import {
   Value,
 } from './styles'
 
-export const ItemIconExpanded = (props: ItemIconExpandedProps) => {
+export const ProductCard = (props: ItemIconExpandedProps) => {
   const { title, description, price } = props
 
   return (

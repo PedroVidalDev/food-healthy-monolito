@@ -19,6 +19,10 @@ const theme = {
     RED: '#E8BAAB',
     RED_LIGHT: '#F2DFD8',
     RED_DARK: '#C44117',
+
+    YELLOW: '#F6EAB8',
+
+    LIGHT_GREEN: '#CFFFE5',
   },
   FONT_FAMILY: {
     BALOO2: {

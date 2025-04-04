@@ -1,13 +1,18 @@
 /* eslint-disable camelcase */
-import theme from '@theme/index'
+
+import { ThemeProvider } from 'styled-components/native'
 import { Baloo2_700Bold } from '@expo-google-fonts/baloo-2'
-import styled, { ThemeProvider } from 'styled-components/native'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import {
   useFonts,
   Roboto_400Regular,
   Roboto_700Bold,
 } from '@expo-google-fonts/roboto'
-import { Home } from 'src/pages/Home'
+
+import { Home } from '@screens/Home'
+
+import theme from '@theme/index'
+import { StatusBar } from 'react-native'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,18 +27,15 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container>
+      <SafeAreaProvider>
+        <StatusBar
+          barStyle={'dark-content'}
+          backgroundColor={'transparent'}
+          translucent
+        />
+
         <Home />
-      </Container>
+      </SafeAreaProvider>
     </ThemeProvider>
   )
 }
-
-const Container = styled.View`
-  flex: 1;
-  background-color: ${({ theme }) => theme.COLORS.WHITE};
-
-  justify-content: flex-start;
-
-  padding: 0 12px;
-`
