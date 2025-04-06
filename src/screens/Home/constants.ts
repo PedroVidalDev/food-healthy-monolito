@@ -28,7 +28,7 @@ export const homeFoodCategories = [
   },
   {
     id: 6,
-    title: 'Promoções',
+    title: 'Promos',
     icon: PhosphorIcons.Tag,
   },
   {

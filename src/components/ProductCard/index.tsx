@@ -1,4 +1,4 @@
-import FoodImage from '@assets/images/food.png'
+import FoodImage from '@assets/food.png'
 
 import { ItemIconExpandedProps } from './types'
 
