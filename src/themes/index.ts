@@ -2,7 +2,8 @@ const theme = {
   COLORS: {
     PRIMARY: '#84FFD8',
     PRIMARY_DARK: '#50AA86',
-    PRIMARY_LIGHT: '#E6FCF5',
+    PRIMARY_LIGHT: '#CFFFE5',
+    PRIMARY_LIGHTER: '#E6FCF5',
 
     WHITE: '#FFFFFF',
     BLACK: '#000000',
@@ -21,8 +22,6 @@ const theme = {
     RED_DARK: '#C44117',
 
     YELLOW: '#F6EAB8',
-
-    LIGHT_GREEN: '#CFFFE5',
   },
   FONT_FAMILY: {
     BALOO2: {

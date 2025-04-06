@@ -11,7 +11,7 @@ export const Container = styled.View`
 
   padding: 12px;
 
-  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHTER};
 `
 
 export const ImageContainer = styled.View`

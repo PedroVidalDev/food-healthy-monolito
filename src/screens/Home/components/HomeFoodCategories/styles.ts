@@ -36,7 +36,7 @@ export const CategoryContainer = styled.View`
 
   border-radius: 6px;
 
-  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHTER};
 `
 
 export const CategoryTitle = styled.Text`
