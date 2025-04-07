@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 
 import { ThemeProvider } from 'styled-components/native'
-import { Baloo2_700Bold } from '@expo-google-fonts/baloo-2'
+import { Baloo2_700Bold, Baloo2_500Medium } from '@expo-google-fonts/baloo-2'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import {
   useFonts,
@@ -19,6 +19,7 @@ export default function App() {
     Roboto_400Regular,
     Roboto_700Bold,
     Baloo2_700Bold,
+    Baloo2_500Medium,
   })
 
   if (!fontsLoaded) {
