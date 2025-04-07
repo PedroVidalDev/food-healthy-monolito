@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Geolocation from 'react-native-geolocation-service'
 import { requestLocationPermission } from '@services/geolocationService'
+import Geolocation from 'react-native-geolocation-service'
 
 export const useGeolocation = () => {
   const [location, setLocation] = useState('')
@@ -10,23 +10,21 @@ export const useGeolocation = () => {
     const granted = await requestLocationPermission()
 
     if (granted) {
-      console.log('Getting current position...')
-
       Geolocation.getCurrentPosition(
         (position) => {
-          console.log('Inside getCurrentPosition callback')
-          console.log('Position:', position)
-          const locationText = `${position.coords.latitude}, ${position.coords.longitude}`
-          setLocation(locationText)
+          const { latitude, longitude } = position.coords
+          console.log('Location coordinates:', latitude, longitude)
+          setLocation(`Lat: ${latitude}, Lon: ${longitude}`)
         },
         (error) => {
-          console.log('Error:', error.code, error.message)
-          setLocation('Location unavailable')
+          console.error('Error getting location:', error.message)
+          setLocation('Unable to get location')
         },
         { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
       )
     } else {
-      setLocation('Permission denied')
+      console.log('Location permission denied')
+      setLocation('Location permission denied')
     }
 
     console.log('Location:', location)
