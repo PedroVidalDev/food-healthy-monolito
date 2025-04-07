@@ -19,7 +19,7 @@ export const CategoriesContainer = styled.View`
 
 export const Title = styled.Text`
   ${({ theme }) => css`
-    color: ${theme.COLORS.GRAY_100};
+    color: ${theme.COLORS.GRAY_400};
     font-size: ${theme.FONT_SIZE.LG}px;
     font-family: ${theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
   `}

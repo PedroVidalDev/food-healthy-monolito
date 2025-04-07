@@ -25,6 +25,7 @@ const theme = {
   },
   FONT_FAMILY: {
     BALOO2: {
+      BALOO2_MEDIUM: 'Baloo2_500Medium',
       BALOO2_SEMIBOLD: 'Baloo2_600SemiBold',
       BALOO2_BOLD: 'Baloo2_700Bold',
     },
