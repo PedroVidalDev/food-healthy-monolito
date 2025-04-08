@@ -1,4 +1,7 @@
+import { useEffect } from 'react'
 import * as PhosphorIcons from 'phosphor-react-native'
+
+import { useGeolocation } from '@hooks/useGeolocation'
 
 import {
   Container,
@@ -7,8 +10,6 @@ import {
   LocalizationContainer,
   LocalizationText,
 } from './styles'
-import { useEffect } from 'react'
-import { useGeolocation } from '@hooks/useGeolocation'
 
 export const HomeHeader = () => {
   const { location, getCurrentLocation } = useGeolocation()

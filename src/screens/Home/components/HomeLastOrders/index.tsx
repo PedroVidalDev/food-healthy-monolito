@@ -1,8 +1,8 @@
 import { lastOrders } from '@screens/Home/constants'
 
-import { Title, HomeLastOrdersContainer } from './styles'
-
 import { ProductCard } from '@components/ProductCard'
+
+import { Title, HomeLastOrdersContainer } from './styles'
 
 export const HomeLastOrders = () => {
   return (

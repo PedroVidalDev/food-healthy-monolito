@@ -1,3 +1,7 @@
+import { homeFoodCategories } from '@screens/Home/constants'
+
+import { Icon } from '@components/Icon'
+
 import {
   Title,
   CategoryTitle,
@@ -5,8 +9,6 @@ import {
   CategoriesContainer,
   HomeFoodCategoriesContainer,
 } from './styles'
-
-import { homeFoodCategories } from '@screens/Home/constants'
 
 export const HomeFoodCategories = () => {
   return (
@@ -16,7 +18,7 @@ export const HomeFoodCategories = () => {
       <CategoriesContainer>
         {homeFoodCategories.map((category) => (
           <CategoryContainer key={category.id} style={{ elevation: 1 }}>
-            <category.icon size={32} color="#000" />
+            <Icon name={category.icon} size={32} color="BLACK" />
             <CategoryTitle>{category.title}</CategoryTitle>
           </CategoryContainer>
         ))}
