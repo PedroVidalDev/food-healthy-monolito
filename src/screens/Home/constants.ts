@@ -1,45 +1,51 @@
 import * as PhosphorIcons from 'phosphor-react-native'
 
-export const homeFoodCategories = [
+type HomeFoodCategoriesType = {
+  id: number
+  title: string
+  icon: keyof typeof PhosphorIcons
+}
+
+export const homeFoodCategories: HomeFoodCategoriesType[] = [
   {
     id: 1,
     title: 'Bebidas',
-    icon: PhosphorIcons.BeerStein,
+    icon: 'BeerStein',
   },
   {
     id: 2,
     title: 'Pizza',
-    icon: PhosphorIcons.Pizza,
+    icon: 'Pizza',
   },
   {
     id: 3,
     title: 'Salada',
-    icon: PhosphorIcons.BowlFood,
+    icon: 'BowlFood',
   },
   {
     id: 4,
     title: 'Favoritos',
-    icon: PhosphorIcons.Heart,
+    icon: 'Heart',
   },
   {
     id: 5,
     title: 'Burguer',
-    icon: PhosphorIcons.Hamburger,
+    icon: 'Hamburger',
   },
   {
     id: 6,
     title: 'Promos',
-    icon: PhosphorIcons.Tag,
+    icon: 'Tag',
   },
   {
     id: 7,
     title: 'PFs',
-    icon: PhosphorIcons.BowlSteam,
+    icon: 'BowlSteam',
   },
   {
     id: 8,
     title: 'Doces',
-    icon: PhosphorIcons.Cake,
+    icon: 'Cake',
   },
 ]
 
