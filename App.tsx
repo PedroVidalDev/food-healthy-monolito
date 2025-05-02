@@ -13,6 +13,7 @@ import { Home } from '@screens/Home'
 
 import theme from '@theme/index'
 import { StatusBar } from 'react-native'
+import { Tickets } from '@screens/Tickets'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -35,7 +36,7 @@ export default function App() {
           translucent
         />
 
-        <Home />
+        <Tickets />
       </SafeAreaProvider>
     </ThemeProvider>
   )
