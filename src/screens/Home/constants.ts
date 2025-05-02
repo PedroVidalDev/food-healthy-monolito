@@ -9,42 +9,42 @@ type HomeFoodCategoriesType = {
 export const homeFoodCategories: HomeFoodCategoriesType[] = [
   {
     id: 1,
-    title: 'Bebidas',
+    title: 'Café',
     icon: 'BeerStein',
   },
   {
     id: 2,
-    title: 'Pizza',
+    title: 'Almoço',
     icon: 'Pizza',
   },
   {
     id: 3,
-    title: 'Salada',
+    title: 'Jantar',
     icon: 'BowlFood',
   },
   {
     id: 4,
-    title: 'Favoritos',
+    title: 'Sobremesas',
     icon: 'Heart',
   },
   {
     id: 5,
-    title: 'Burguer',
+    title: 'Temáticos',
     icon: 'Hamburger',
   },
   {
     id: 6,
-    title: 'Promos',
+    title: 'Exclusivos',
     icon: 'Tag',
   },
   {
     id: 7,
-    title: 'PFs',
+    title: 'Favoritos',
     icon: 'BowlSteam',
   },
   {
     id: 8,
-    title: 'Doces',
+    title: 'Promos',
     icon: 'Cake',
   },
 ]
