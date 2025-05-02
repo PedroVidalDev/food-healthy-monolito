@@ -1,6 +1,9 @@
 import { PermissionsAndroid, Platform } from 'react-native'
 
 export const requestLocationPermission = async () => {
+  if (PermissionsAndroid.RESULTS.GRANTED) {
+    return true
+  }
   if (Platform.OS === 'android') {
     try {
       const granted = await PermissionsAndroid.request(

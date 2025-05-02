@@ -11,7 +11,7 @@ export const TicketsHeaderContainer = styled.View`
   align-items: center;
   justify-content: space-between;
 `
-export const TicketsHeaderRollback = styled.View`
+export const TicketsHeaderRollback = styled.TouchableOpacity`
   width: 24px;
   height: 24px;
   border-radius: 12px;
