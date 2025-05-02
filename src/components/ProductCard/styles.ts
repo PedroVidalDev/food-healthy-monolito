@@ -1,7 +1,14 @@
+import { Pressable } from 'react-native'
 import { css } from 'styled-components'
 import styled from 'styled-components/native'
 
-export const Container = styled.View`
+export const Container = styled(Pressable).attrs({
+  android_ripple: {
+    color: '#00000020',
+    borderless: false,
+    foreground: true,
+  },
+})`
   display: flex;
   flex-direction: row;
 

@@ -1,3 +1,4 @@
+import { Pressable } from 'react-native'
 import styled, { css } from 'styled-components/native'
 
 export const HomeFoodCategoriesContainer = styled.View`
@@ -24,8 +25,13 @@ export const Title = styled.Text`
     font-family: ${theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
   `}
 `
-
-export const CategoryContainer = styled.View`
+export const CategoryContainer = styled(Pressable).attrs({
+  android_ripple: {
+    color: '#00000020',
+    borderless: false,
+    foreground: true,
+  },
+})`
   align-items: center;
   justify-content: center;
 
