@@ -1,11 +1,11 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { ItemList } from './components/ItemList'
+import { ItemList } from './components/CartItemList'
 import { CartHeader } from './components/CartHeader'
 
 import { CartContainer, Separator } from './styles'
-import { Ticket } from './components/Ticket'
-import { SaleValues } from './components/SaleValues'
+import { Ticket } from './components/CartTicket'
+import { SaleValues } from './components/CartSaleValues'
 import { Button } from '@components/Button'
 
 export const Cart = () => {
