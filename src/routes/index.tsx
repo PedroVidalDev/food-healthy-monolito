@@ -4,8 +4,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Home } from '@screens/Home'
 import { Tickets } from '@screens/Tickets'
 
-import { AppRoutesProps } from './types'
 import { Cart } from '@screens/Cart'
+import { Help } from '@screens/Help'
+import { AppRoutesProps } from './types'
 import { Payment } from '@screens/Payment'
 
 export const Routes = () => {
@@ -18,6 +19,7 @@ export const Routes = () => {
         <Screen name="tickets" component={Tickets} />
         <Screen name="cart" component={Cart} />
         <Screen name="payment" component={Payment} />
+        <Screen name="help" component={Help} />
       </Navigator>
     </NavigationContainer>
   )

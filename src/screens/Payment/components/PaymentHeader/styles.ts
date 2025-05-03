@@ -24,6 +24,8 @@ export const PaymentHeaderSubtitle = styled.Text`
   color: ${({ theme }) => theme.COLORS.BLACK};
 `
 
+export const PaymentHeaderHelpContainer = styled.TouchableOpacity``
+
 export const PaymentHeaderHelp = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_MEDIUM};
   font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;

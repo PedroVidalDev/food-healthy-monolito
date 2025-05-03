@@ -7,6 +7,7 @@ import { AppNavigationRoutesProps } from '@routes/types'
 import {
   TicketsHeaderContainer,
   TicketsHeaderHelp,
+  TicketsHeaderHelpContainer,
   TicketsHeaderRollback,
   TicketsHeaderSubtitle,
 } from './styles'
@@ -18,13 +19,19 @@ export const TicketsHeader = () => {
     navigation.navigate('cart')
   }
 
+  const handleGoHelp = () => {
+    navigation.navigate('help')
+  }
+
   return (
     <TicketsHeaderContainer>
       <TicketsHeaderRollback onPress={handleGoBack}>
         <Icon color="BLACK" name="ArrowArcLeft" size={16} />{' '}
       </TicketsHeaderRollback>
       <TicketsHeaderSubtitle>Cupons</TicketsHeaderSubtitle>
-      <TicketsHeaderHelp>Ajuda</TicketsHeaderHelp>
+      <TicketsHeaderHelpContainer onPress={handleGoHelp}>
+        <TicketsHeaderHelp>Ajuda</TicketsHeaderHelp>
+      </TicketsHeaderHelpContainer>
     </TicketsHeaderContainer>
   )
 }

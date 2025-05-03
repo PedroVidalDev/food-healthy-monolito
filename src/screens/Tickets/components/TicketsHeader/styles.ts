@@ -24,6 +24,8 @@ export const TicketsHeaderSubtitle = styled.Text`
   color: ${({ theme }) => theme.COLORS.BLACK};
 `
 
+export const TicketsHeaderHelpContainer = styled.TouchableOpacity``
+
 export const TicketsHeaderHelp = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_MEDIUM};
   font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;

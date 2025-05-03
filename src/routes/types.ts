@@ -5,6 +5,7 @@ export type AppRoutesProps = {
   tickets: undefined
   cart: undefined
   payment: undefined
+  help: undefined
 }
 
 export type AppNavigationRoutesProps = NativeStackNavigationProp<AppRoutesProps>
