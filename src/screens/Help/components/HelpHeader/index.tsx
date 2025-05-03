@@ -23,8 +23,8 @@ export const HelpHeader = () => {
       <HelpHeaderRollback onPress={handleGoBack}>
         <Icon color="BLACK" name="ArrowArcLeft" size={16} />{' '}
       </HelpHeaderRollback>
-      <HelpHeaderSubtitle>Carrinho</HelpHeaderSubtitle>
-      <HelpHeaderHelp>Limpar</HelpHeaderHelp>
+      <HelpHeaderSubtitle>Ajuda</HelpHeaderSubtitle>
+      <HelpHeaderHelp>Fechar</HelpHeaderHelp>
     </HelpHeaderContainer>
   )
 }
