@@ -24,7 +24,7 @@ export const CartHeader = () => {
         <Icon color="BLACK" name="ArrowArcLeft" size={16} />{' '}
       </CartHeaderRollback>
       <CartHeaderSubtitle>Carrinho</CartHeaderSubtitle>
-      <CartHeaderHelp>Ajuda</CartHeaderHelp>
+      <CartHeaderHelp>Limpar</CartHeaderHelp>
     </CartHeaderContainer>
   )
 }

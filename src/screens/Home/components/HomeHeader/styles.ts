@@ -35,3 +35,8 @@ export const LocalizationText = styled.Text`
     color: ${theme.COLORS.BLACK};
   `}
 `
+
+export const CartButtonContainer = styled.TouchableOpacity`
+  justify-content: center;
+  align-items: center;
+`

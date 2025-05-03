@@ -19,7 +19,9 @@ export const HomeFoodCategories = () => {
         {homeFoodCategories.map((category) => (
           <CategoryContainer key={category.id} style={{ elevation: 1 }}>
             <Icon name={category.icon} size={32} color="BLACK" />
-            <CategoryTitle>{category.title}</CategoryTitle>
+            <CategoryTitle numberOfLines={1} ellipsizeMode="tail">
+              {category.title}
+            </CategoryTitle>
           </CategoryContainer>
         ))}
       </CategoriesContainer>

@@ -9,6 +9,8 @@ export const HomeFreeShippingCardContainer = styled.View`
 
   border-radius: 8px;
   background-color: ${({ theme }) => theme.COLORS.PRIMARY_DARK};
+
+  padding: 12px;
 `
 
 export const Description = styled.View`

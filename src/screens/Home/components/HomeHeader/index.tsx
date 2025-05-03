@@ -1,9 +1,14 @@
 import { useEffect } from 'react'
-import * as PhosphorIcons from 'phosphor-react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import { useGeolocation } from '@hooks/useGeolocation'
 
+import { AppNavigationRoutesProps } from '@routes/types'
+
+import { Icon } from '@components/Icon'
+
 import {
+  CartButtonContainer,
   Container,
   HomeHeaderGreeting,
   LocalizationAndCartContainer,
@@ -14,6 +19,12 @@ import {
 export const HomeHeader = () => {
   const { location, getCurrentLocation } = useGeolocation()
 
+  const navigate = useNavigation<AppNavigationRoutesProps>()
+
+  const handleGoToCart = () => {
+    navigate.navigate('cart')
+  }
+
   useEffect(() => {
     getCurrentLocation()
   }, [getCurrentLocation])
@@ -23,10 +34,17 @@ export const HomeHeader = () => {
       <HomeHeaderGreeting>Olá, João</HomeHeaderGreeting>
       <LocalizationAndCartContainer>
         <LocalizationContainer>
-          <PhosphorIcons.MapPin size={16} color="#50AA86" weight="fill" />
+          <Icon name="MapPin" size={16} color="PRIMARY_DARK" weight="fill" />
           <LocalizationText>{location}</LocalizationText>
         </LocalizationContainer>
-        <PhosphorIcons.ShoppingCart size={16} color="#50AA86" weight="fill" />
+        <CartButtonContainer onPress={handleGoToCart}>
+          <Icon
+            name="ShoppingCart"
+            size={16}
+            color="PRIMARY_DARK"
+            weight="fill"
+          />
+        </CartButtonContainer>
       </LocalizationAndCartContainer>
     </Container>
   )
