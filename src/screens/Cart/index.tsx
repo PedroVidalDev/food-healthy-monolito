@@ -6,6 +6,7 @@ import { CartHeader } from './components/CartHeader'
 import { CartContainer, Separator } from './styles'
 import { Ticket } from './components/Ticket'
 import { SaleValues } from './components/SaleValues'
+import { Button } from '@components/Button'
 
 export const Cart = () => {
   const insents = useSafeAreaInsets()
@@ -18,6 +19,7 @@ export const Cart = () => {
       <Ticket />
       <Separator />
       <SaleValues />
+      <Button text="Confirmar" backgroundColor="PRIMARY" />
     </CartContainer>
   )
 }
