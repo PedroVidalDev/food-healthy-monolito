@@ -15,7 +15,9 @@ export const CartHeader = () => {
   const navigation = useNavigation<AppNavigationRoutesProps>()
 
   const handleGoBack = () => {
-    navigation.navigate('home')
+    if (navigation.canGoBack()) {
+      navigation.goBack()
+    }
   }
 
   return (

@@ -16,7 +16,9 @@ export const TicketsHeader = () => {
   const navigation = useNavigation<AppNavigationRoutesProps>()
 
   const handleGoBack = () => {
-    navigation.navigate('cart')
+    if (navigation.canGoBack()) {
+      navigation.goBack()
+    }
   }
 
   const handleGoHelp = () => {
