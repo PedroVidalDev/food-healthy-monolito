@@ -15,15 +15,15 @@ export const PaymentHeader = () => {
   const navigation = useNavigation<AppNavigationRoutesProps>()
 
   const handleGoBack = () => {
-    navigation.navigate('home')
+    navigation.navigate('cart')
   }
 
   return (
     <PaymentHeaderContainer>
       <PaymentHeaderRollback onPress={handleGoBack}>
-        <Icon color="BLACK" name="ArrowArcLeft" size={16} />{' '}
+        <Icon color="BLACK" name="ArrowArcLeft" size={16} />
       </PaymentHeaderRollback>
-      <PaymentHeaderSubtitle>Carrinho</PaymentHeaderSubtitle>
+      <PaymentHeaderSubtitle>Pagamento</PaymentHeaderSubtitle>
       <PaymentHeaderHelp>Limpar</PaymentHeaderHelp>
     </PaymentHeaderContainer>
   )
