@@ -28,7 +28,7 @@ export const TicketsHeader = () => {
   return (
     <TicketsHeaderContainer>
       <TicketsHeaderRollback onPress={handleGoBack}>
-        <Icon color="BLACK" name="ArrowArcLeft" size={16} />{' '}
+        <Icon color="BLACK" name="ArrowArcLeft" size={16} />
       </TicketsHeaderRollback>
       <TicketsHeaderSubtitle>Cupons</TicketsHeaderSubtitle>
       <TicketsHeaderHelpContainer onPress={handleGoHelp}>

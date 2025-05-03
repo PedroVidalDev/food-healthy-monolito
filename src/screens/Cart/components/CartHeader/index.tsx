@@ -23,7 +23,7 @@ export const CartHeader = () => {
   return (
     <CartHeaderContainer>
       <CartHeaderRollback onPress={handleGoBack}>
-        <Icon color="BLACK" name="ArrowArcLeft" size={16} />{' '}
+        <Icon color="BLACK" name="ArrowArcLeft" size={16} />
       </CartHeaderRollback>
       <CartHeaderSubtitle>Carrinho</CartHeaderSubtitle>
       <CartHeaderHelp>Limpar</CartHeaderHelp>
