@@ -5,6 +5,7 @@ import { Home } from '@screens/Home'
 import { Tickets } from '@screens/Tickets'
 
 import { AppRoutesProps } from './types'
+import { Cart } from '@screens/Cart'
 
 export const Routes = () => {
   const { Navigator, Screen } = createNativeStackNavigator<AppRoutesProps>()
@@ -12,8 +13,9 @@ export const Routes = () => {
   return (
     <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false }}>
-        <Screen name="tickets" component={Tickets} />
         <Screen name="home" component={Home} />
+        <Screen name="tickets" component={Tickets} />
+        <Screen name="cart" component={Cart} />
       </Navigator>
     </NavigationContainer>
   )
