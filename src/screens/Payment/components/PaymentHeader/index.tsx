@@ -24,7 +24,7 @@ export const PaymentHeader = () => {
         <Icon color="BLACK" name="ArrowArcLeft" size={16} />
       </PaymentHeaderRollback>
       <PaymentHeaderSubtitle>Pagamento</PaymentHeaderSubtitle>
-      <PaymentHeaderHelp>Limpar</PaymentHeaderHelp>
+      <PaymentHeaderHelp>Ajuda</PaymentHeaderHelp>
     </PaymentHeaderContainer>
   )
 }
