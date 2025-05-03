@@ -1,8 +1,10 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { CartHeader } from './CartHeader'
+import { ItemList } from './components/ItemList'
+import { CartHeader } from './components/CartHeader'
 
-import { CartContainer } from './styles'
+import { CartContainer, Separator } from './styles'
+import { Ticket } from './components/Ticket'
 
 export const Cart = () => {
   const insents = useSafeAreaInsets()
@@ -10,6 +12,10 @@ export const Cart = () => {
   return (
     <CartContainer statusBarHeight={insents.top}>
       <CartHeader />
+      <ItemList />
+      <Separator />
+      <Ticket />
+      <Separator />
     </CartContainer>
   )
 }

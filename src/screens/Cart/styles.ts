@@ -14,3 +14,11 @@ export const CartContainer = styled(ScrollView).attrs({
     background-color: ${theme.COLORS.GRAY_900};
   `}
 `
+
+export const Separator = styled.View`
+  ${({ theme }) => css`
+    width: 100%;
+    height: 1px;
+    background-color: ${theme.COLORS.GRAY_800};
+  `}
+`
