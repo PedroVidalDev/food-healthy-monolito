@@ -2,10 +2,10 @@ import { ButtonContainer, ButtonText } from './styles'
 import { ButtonProps } from './types'
 
 export const Button = (props: ButtonProps) => {
-  const { text, backgroundColor } = props
+  const { text, backgroundColor, onPress } = props
 
   return (
-    <ButtonContainer backgroundColor={backgroundColor}>
+    <ButtonContainer onPress={onPress} backgroundColor={backgroundColor}>
       <ButtonText>{text}</ButtonText>
     </ButtonContainer>
   )
