@@ -5,6 +5,7 @@ import { CartHeader } from './components/CartHeader'
 
 import { CartContainer, Separator } from './styles'
 import { Ticket } from './components/Ticket'
+import { SaleValues } from './components/SaleValues'
 
 export const Cart = () => {
   const insents = useSafeAreaInsets()
@@ -16,6 +17,7 @@ export const Cart = () => {
       <Separator />
       <Ticket />
       <Separator />
+      <SaleValues />
     </CartContainer>
   )
 }
