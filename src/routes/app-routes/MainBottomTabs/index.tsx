@@ -2,12 +2,9 @@ import { House, Notepad, ShoppingCart, UserCircle } from 'phosphor-react-native'
 import { useTheme } from 'styled-components/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { Home } from '@screens/Home'
-import { Cart } from '@screens/Cart'
-import { Orders } from '@screens/Orders'
-import { Profile } from '@screens/Profile'
+import { Home, Cart, Orders, Profile } from '@screens/index'
 
-export const BottomTabs = () => {
+export const MainBottomTabs = () => {
   const { Navigator, Screen } = createBottomTabNavigator()
 
   const { COLORS } = useTheme()
