@@ -1,13 +1,14 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import { AppRoutesProps } from '@routes/types'
+import { MainStackNavigatorRoutes } from '@routes/types'
 
 import { Help, Payment, Tickets } from '@screens/index'
 
 import { MainBottomTabs } from '../MainBottomTabs'
 
 export const MainStackNavigator = () => {
-  const { Navigator, Screen } = createNativeStackNavigator<AppRoutesProps>()
+  const { Navigator, Screen } =
+    createNativeStackNavigator<MainStackNavigatorRoutes>()
 
   return (
     <Navigator screenOptions={{ headerShown: false }}>

@@ -1,14 +1,21 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
-export type AppRoutesProps = {
-  home: undefined
+export type MainStackNavigatorRoutes = {
   tickets: undefined
-  cart: undefined
   payment: undefined
   help: undefined
   bottomTabs: undefined
+}
+
+export type MainBottomTabsRoutes = {
+  home: undefined
+  cart: undefined
   orders: undefined
   profile: undefined
 }
 
-export type AppNavigationRoutesProps = NativeStackNavigationProp<AppRoutesProps>
+export type AppNavigationRoutes = MainStackNavigatorRoutes &
+  MainBottomTabsRoutes
+
+export type AppNavigationRoutesProps =
+  NativeStackNavigationProp<AppNavigationRoutes>

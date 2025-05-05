@@ -3,9 +3,10 @@ import { useTheme } from 'styled-components/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { Home, Cart, Orders, Profile } from '@screens/index'
+import { MainBottomTabsRoutes } from '@routes/types'
 
 export const MainBottomTabs = () => {
-  const { Navigator, Screen } = createBottomTabNavigator()
+  const { Navigator, Screen } = createBottomTabNavigator<MainBottomTabsRoutes>()
 
   const { COLORS } = useTheme()
 
