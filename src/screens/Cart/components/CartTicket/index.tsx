@@ -1,8 +1,4 @@
-import { useNavigation } from '@react-navigation/native'
-
 import { Icon } from '@components/Icon'
-
-import { AppNavigationRoutesProps } from '@routes/types'
 
 import {
   TicketContainer,
@@ -13,13 +9,10 @@ import {
   TicketRightSideText,
   TicketTicketRightSide,
 } from './styles'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 export const Ticket = () => {
-  const navigate = useNavigation<AppNavigationRoutesProps>()
-
-  const handleTickets = () => {
-    navigate.navigate('tickets')
-  }
+  const { handleNavigation } = useAppNavigation()
 
   return (
     <TicketContainer>
@@ -30,7 +23,7 @@ export const Ticket = () => {
           <TicketLeftSideTextSubtitle>3 disponíveis</TicketLeftSideTextSubtitle>
         </TicketLeftSideText>
       </TicketLeftSide>
-      <TicketTicketRightSide onPress={handleTickets}>
+      <TicketTicketRightSide onPress={() => handleNavigation('tickets')}>
         <TicketRightSideText>Adicionar</TicketRightSideText>
       </TicketTicketRightSide>
     </TicketContainer>
