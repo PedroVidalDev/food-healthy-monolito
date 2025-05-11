@@ -6,5 +6,5 @@ CREATE TABLE tb_products (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     quantity INT DEFAULT 0,
-    category VARCHAR(255),
-)
+    category VARCHAR(255)
+);
