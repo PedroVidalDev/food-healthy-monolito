@@ -30,12 +30,12 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<ResponseDTO<UserDTO>> login(@RequestBody @Valid UserLoginDTO userLoginDTO) {
+    public ResponseEntity<ResponseDTO<String>> login(@RequestBody @Valid UserLoginDTO userLoginDTO) {
         var token = new UsernamePasswordAuthenticationToken(userLoginDTO.email(), userLoginDTO.password());
         var auth = manager.authenticate(token);
         var jwtToken = tokenUtils.generateToken((User) auth.getPrincipal());
 
-        return ResponseEntity.ok(new ResponseDTO<>(200, new UserDTO((User) auth.getPrincipal()), jwtToken));
+        return ResponseEntity.ok(new ResponseDTO<>(200, jwtToken, "Login successful"));
     }
 
     @PostMapping("/register")

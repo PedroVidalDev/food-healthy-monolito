@@ -38,6 +38,7 @@ public class User implements UserDetails {
         this.email = userCreateDTO.email();
         this.password = userCreateDTO.password();
         this.phone = userCreateDTO.phone();
+        this.active = true;
         this.role = UserRoleEnum.USER;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
