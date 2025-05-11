@@ -26,6 +26,10 @@ public class Ticket {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Ticket(TicketCreateDTO ticketCreateDTO) {
         this.name = ticketCreateDTO.name();
         this.description = ticketCreateDTO.description();

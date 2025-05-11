@@ -3,6 +3,7 @@ package com.pedro.food_healthy.services;
 import com.pedro.food_healthy.dtos.product.ProductCreateDTO;
 import com.pedro.food_healthy.dtos.product.ProductDTO;
 import com.pedro.food_healthy.entities.Product;
+import com.pedro.food_healthy.entities.User;
 import com.pedro.food_healthy.repositories.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,14 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private AuthService authService;
+
     public ProductDTO create(ProductCreateDTO productCreateDTO) {
         Product product = new Product(productCreateDTO);
+
+        User user = authService.getAuthenticatedUser().orElseThrow(() -> new EntityNotFoundException("User not found"));
+        product.setUser(user);
 
         productRepository.save(product);
 

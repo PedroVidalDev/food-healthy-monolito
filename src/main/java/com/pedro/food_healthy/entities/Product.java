@@ -27,6 +27,10 @@ public class Product {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Product(ProductCreateDTO productCreateDTO) {
         this.name = productCreateDTO.name();
         this.description = productCreateDTO.description();
