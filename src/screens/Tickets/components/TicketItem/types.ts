@@ -1,5 +1,5 @@
 export type TicketItemProps = {
-  id: string
+  id: number
   title: string
   value: number
 }

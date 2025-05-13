@@ -20,3 +20,15 @@ export const TicketsListContainer = styled.View`
 
   gap: 8px;
 `
+
+export const TicketsEmptyError = styled.Text`
+  ${({ theme }) => css`
+    color: ${theme.COLORS.RED_DARK};
+    font-size: ${theme.FONT_SIZE.SM}px;
+    font-family: ${theme.FONT_FAMILY.ROBOTO.ROBOTO_MEDIUM};
+  `}
+
+  width: 100%;
+
+  text-align: center;
+`
