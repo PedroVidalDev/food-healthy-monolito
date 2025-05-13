@@ -1,6 +1,7 @@
 package com.pedro.food_healthy.config.security;
 
 import com.pedro.food_healthy.middlewares.AuthFilter;
+import com.pedro.food_healthy.middlewares.CorsFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,7 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
@@ -20,6 +22,9 @@ public class SecurityConfig {
 
     @Autowired
     private AuthFilter authFilter;
+
+    @Autowired
+    private CorsFilter corsFilter;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -38,9 +43,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(req -> {
                     req.requestMatchers("/auth/register").permitAll();
                     req.requestMatchers("/auth/login").permitAll();
-                    req.anyRequest().authenticated();
+                    req.anyRequest().permitAll();
                 })
                 .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(corsFilter, ChannelProcessingFilter.class)
                 .build();
 
     }
