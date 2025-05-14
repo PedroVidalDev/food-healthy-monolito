@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity(name = "HelpMenu")
-@Table(name = "tb_help_menu")
+@Table(name = "tb_help_menus")
 @Getter
 @Setter
 @AllArgsConstructor
