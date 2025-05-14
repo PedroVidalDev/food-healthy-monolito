@@ -30,7 +30,7 @@ public class TicketService {
     }
 
     public TicketDTO[] findAll() {
-        return this.ticketRepository.findAll().stream().map(TicketDTO::new).toArray(TicketDTO[]::new);
+        return this.ticketRepository.findAllAvailableTickets().stream().map(TicketDTO::new).toArray(TicketDTO[]::new);
     }
 
     public TicketDTO findById(Long id) {

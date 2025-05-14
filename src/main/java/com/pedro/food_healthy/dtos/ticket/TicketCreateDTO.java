@@ -3,6 +3,9 @@ package com.pedro.food_healthy.dtos.ticket;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Future;
+
+import java.time.LocalDate;
 
 public record TicketCreateDTO(
         @NotBlank
@@ -12,6 +15,9 @@ public record TicketCreateDTO(
         String description,
 
         @NotNull @Min(1)
-        Integer value
+        Integer value,
+
+        @Future
+        LocalDate expiredAt
 ) {
 }

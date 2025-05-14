@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity(name = "Ticket")
@@ -25,6 +26,7 @@ public class Ticket {
     private Boolean status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private LocalDate expiredAt;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -37,5 +39,6 @@ public class Ticket {
         this.status = true;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
+        this.expiredAt = ticketCreateDTO.expiredAt();
     }
 }
