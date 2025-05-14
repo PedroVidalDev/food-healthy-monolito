@@ -17,7 +17,7 @@ import {
   TicketTicketRightSide,
 } from './styles'
 
-export const Ticket = (props: CartTicketProps) => {
+export const CartTicket = (props: CartTicketProps) => {
   const { ticketId } = props
 
   const { fetchGetAllTickets, fetchGetOneTicket, tickets, ticket } =

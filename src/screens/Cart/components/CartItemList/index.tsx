@@ -4,7 +4,7 @@ import { itemList } from './constants'
 
 import { ItemListContainer } from './styles'
 
-export const ItemList = () => {
+export const CartItemList = () => {
   return (
     <ItemListContainer>
       {itemList.map((item) => (

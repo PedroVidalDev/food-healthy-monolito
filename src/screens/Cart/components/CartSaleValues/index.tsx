@@ -5,7 +5,7 @@ import {
   ValueText,
 } from './styles'
 
-export const SaleValues = () => {
+export const CartSaleValues = () => {
   return (
     <SaleValuesContainer>
       <SaleValuesTitle>Resumo de valores</SaleValuesTitle>
