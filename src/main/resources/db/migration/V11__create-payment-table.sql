@@ -1,7 +1,7 @@
 CREATE TABLE tb_payments (
     id BIGSERIAL PRIMARY KEY,
     order_id BIGSERIAL NOT NULL,
-    payment_method ENUM('CREDIT_CARD', 'DEBIT_CARD', 'PIX', 'BOLETO') NOT NULL,
+    payment_method ENUM('CREDIT_CARD', 'DEBIT_CARD', 'PIX') NOT NULL,
     status ENUM('PENDING', 'COMPLETED', 'FAILED') NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
