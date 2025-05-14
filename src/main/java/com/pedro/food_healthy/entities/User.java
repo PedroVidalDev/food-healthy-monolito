@@ -11,8 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Entity(name = "User")
 @Table(name = "tb_users")
@@ -32,6 +31,20 @@ public class User implements UserDetails {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private Boolean active;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Product> products = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<HelpMenu> helpMenus = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+        name = "tb_ticket_usages",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "ticket_id")
+    )
+    private Set<Ticket> tickets = new HashSet<>();
 
     public User(UserCreateDTO userCreateDTO) {
         this.name = userCreateDTO.name();

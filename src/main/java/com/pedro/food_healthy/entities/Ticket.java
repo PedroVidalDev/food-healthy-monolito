@@ -9,6 +9,8 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "Ticket")
 @Table(name = "tb_tickets")
@@ -31,6 +33,14 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToMany
+    @JoinTable(
+        name = "tb_ticket_usages",
+        joinColumns = @JoinColumn(name = "ticket_id"),
+        inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private Set<User> users = new HashSet<>();
 
     public Ticket(TicketCreateDTO ticketCreateDTO) {
         this.name = ticketCreateDTO.name();
