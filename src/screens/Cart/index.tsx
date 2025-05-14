@@ -1,18 +1,20 @@
 import { useNavigation } from '@react-navigation/native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { ItemList } from './components/CartItemList'
-import { CartHeader } from './components/CartHeader'
 import { Button } from '@components/Button'
 import { Ticket } from './components/CartTicket'
+import { ItemList } from './components/CartItemList'
+import { CartHeader } from './components/CartHeader'
 import { SaleValues } from './components/CartSaleValues'
 
 import { AppNavigationRoutesProps } from '@routes/types'
 
 import { CartContainer, Separator } from './styles'
 
-export const Cart = () => {
+export const Cart = ({ route }) => {
   const insents = useSafeAreaInsets()
+
+  const { ticketId } = route.params || {}
 
   const navigate = useNavigation<AppNavigationRoutesProps>()
 
@@ -25,7 +27,7 @@ export const Cart = () => {
       <CartHeader />
       <ItemList />
       <Separator />
-      <Ticket />
+      <Ticket ticketId={ticketId} />
       <Separator />
       <SaleValues />
       <Button

@@ -8,12 +8,28 @@ import {
   TicketItemIconContainer,
   TicketItemTitle,
 } from './styles'
+import { useNavigation } from '@react-navigation/native'
+import { AppNavigationRoutesProps } from '@routes/types'
 
 export const TicketItem = (props: TicketItemProps) => {
   const { id, title, value } = props
 
+  const navigate = useNavigation<AppNavigationRoutesProps>()
+
+  const handleTicketClick = (id: number) => {
+    navigate.navigate('bottomTabs', {
+      screen: 'cart',
+      params: { ticketId: id },
+    })
+  }
+
   return (
-    <TicketItemContainer key={id}>
+    <TicketItemContainer
+      key={id}
+      onPress={() => {
+        handleTicketClick(id)
+      }}
+    >
       <TicketItemIconContainer>
         <Icon name="FolderOpen" size={32} color="BLACK" />
       </TicketItemIconContainer>
