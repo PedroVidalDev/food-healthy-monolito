@@ -1,0 +1,11 @@
+CREATE TABLE tb_orders (
+    id BIGSERIAL PRIMARY KEY,
+    ticket_id BIGSERIAL,
+    user_id BIGSERIAL NOT NULL,
+    total_price DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (ticket_id) REFERENCES tb_tickets(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES tb_users(id) ON DELETE CASCADE
+)
