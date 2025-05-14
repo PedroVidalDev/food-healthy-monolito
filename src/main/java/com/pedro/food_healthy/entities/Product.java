@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity(name = "Product")
 @Table(name = "tb_products")
@@ -30,6 +31,14 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToMany
+    @JoinTable(
+        name = "tb_order_products",
+        joinColumns = @JoinColumn(name = "product_id"),
+        inverseJoinColumns = @JoinColumn(name = "order_id")
+    )
+    private List<Order> orders;
 
     public Product(ProductCreateDTO productCreateDTO) {
         this.name = productCreateDTO.name();
