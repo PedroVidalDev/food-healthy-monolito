@@ -11,23 +11,39 @@ import {
   TicketsEmptyError,
   TicketsListContainer,
 } from './styles'
+import { TicketDTO } from '@dtos/TicketDTO'
 
 export const Tickets = () => {
   const insents = useSafeAreaInsets()
 
-  const { fetchGetAllTickets, tickets } = useTickets()
+  // const { fetchGetAllTickets, tickets } = useTickets()
 
-  useEffect(() => {
-    fetchGetAllTickets()
-  }, [fetchGetAllTickets])
+  // useEffect(() => {
+  // fetchGetAllTickets()
+  // }, [fetchGetAllTickets])
+
+  const ticketMock: TicketDTO[] = [
+    {
+      id: 1,
+      name: 'Cupom legal',
+      description: 'Por tempo limitado',
+      value: 20,
+    },
+    {
+      id: 2,
+      name: 'Cupom daora',
+      description: 'Até o fim do mês',
+      value: 12,
+    },
+  ]
 
   return (
     <TicketsContainer statusBarHeight={insents.top}>
       <TicketsHeader />
 
       <TicketsListContainer>
-        {tickets.length > 0 ? (
-          tickets.map((ticket) => {
+        {ticketMock.length > 0 ? (
+          ticketMock.map((ticket) => {
             return (
               <TicketItem
                 key={ticket.id}
