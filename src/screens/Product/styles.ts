@@ -1,6 +1,6 @@
 import { ScrollView } from 'react-native'
 
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components/native'
 
 export const ProductContainer = styled(ScrollView).attrs({
   showsVerticalScrollIndicator: false,
@@ -14,4 +14,11 @@ export const ProductContainer = styled(ScrollView).attrs({
     padding: ${statusBarHeight + 24}px 24px 0;
     background-color: ${theme.COLORS.GRAY_900};
   `}
+`
+
+export const ProductImage = styled.Image`
+  width: 100%;
+  height: 180px;
+
+  border-radius: 8px;
 `
