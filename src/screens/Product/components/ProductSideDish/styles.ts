@@ -18,4 +18,10 @@ export const ProductSideDishSubtitle = styled.Text`
   `}
 `
 
-export const ProductSideDishList = styled.View``
+export const ProductSideDishList = styled.View`
+  width: 100%;
+
+  gap: 16px;
+
+  margin-top: 24px;
+`
