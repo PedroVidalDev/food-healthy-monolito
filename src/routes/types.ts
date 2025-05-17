@@ -8,6 +8,7 @@ export type MainStackNavigatorRoutes = {
     screen: string
     params: unknown
   }
+  product: undefined
 }
 
 export type MainBottomTabsRoutes = {

@@ -14,12 +14,15 @@ import {
   Title,
   Value,
 } from './styles'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 export const ProductCard = (props: ItemIconExpandedProps) => {
   const { title, description, price } = props
 
+  const { handleNavigation } = useAppNavigation()
+
   return (
-    <Container>
+    <Container onPress={() => handleNavigation('product')}>
       <ImageContainer>
         <Image source={FoodImage} alt="food" />
       </ImageContainer>
