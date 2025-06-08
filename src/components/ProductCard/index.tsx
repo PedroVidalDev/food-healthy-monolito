@@ -1,3 +1,5 @@
+import { useNavigation } from '@react-navigation/native'
+
 import FoodImage from '@assets/food.png'
 
 import { ItemIconExpandedProps } from './types'
@@ -14,15 +16,20 @@ import {
   Title,
   Value,
 } from './styles'
-import { useAppNavigation } from '@hooks/useAppNavigation'
 
 export const ProductCard = (props: ItemIconExpandedProps) => {
-  const { title, description, price } = props
+  const { id, title, description, price } = props
 
-  const { handleNavigation } = useAppNavigation()
+  const navigation = useNavigation()
+
+  const handleNavigation = (productId: number) => {
+    navigation.navigate('product', {
+      productId,
+    })
+  }
 
   return (
-    <Container onPress={() => handleNavigation('product')}>
+    <Container onPress={() => handleNavigation(id)}>
       <ImageContainer>
         <Image source={FoodImage} alt="food" />
       </ImageContainer>

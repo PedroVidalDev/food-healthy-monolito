@@ -1,41 +1,18 @@
-import { useEffect } from 'react'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
+import { ticketMock } from '@constants/mocks'
 
 import { TicketItem } from './components/TicketItem'
 import { TicketsHeader } from './components/TicketsHeader'
-
-import { useTickets } from '@hooks/useTickets'
 
 import {
   TicketsContainer,
   TicketsEmptyError,
   TicketsListContainer,
 } from './styles'
-import { TicketDTO } from '@dtos/TicketDTO'
 
 export const Tickets = () => {
   const insents = useSafeAreaInsets()
-
-  // const { fetchGetAllTickets, tickets } = useTickets()
-
-  // useEffect(() => {
-  // fetchGetAllTickets()
-  // }, [fetchGetAllTickets])
-
-  const ticketMock: TicketDTO[] = [
-    {
-      id: 1,
-      name: 'Cupom legal',
-      description: 'Por tempo limitado',
-      value: 20,
-    },
-    {
-      id: 2,
-      name: 'Cupom daora',
-      description: 'Até o fim do mês',
-      value: 12,
-    },
-  ]
 
   return (
     <TicketsContainer statusBarHeight={insents.top}>

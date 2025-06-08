@@ -1,5 +1,7 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
+import { mockProducts } from '@constants/mocks'
+
 import DemoImage from '@assets/motoboy-shipping.png'
 
 import { ProductHeader } from './components/ProductHeader'
@@ -8,7 +10,9 @@ import { ProductDescription } from './components/ProductDescription'
 
 import { ProductContainer, ProductImage } from './styles'
 
-export const Product = () => {
+export const Product = ({ route }) => {
+  const { productId } = route.params || {}
+
   const insents = useSafeAreaInsets()
 
   return (
@@ -17,7 +21,9 @@ export const Product = () => {
 
       <ProductImage source={DemoImage} />
 
-      <ProductDescription />
+      <ProductDescription
+        product={mockProducts.filter((p) => p.id === productId)[0]}
+      />
 
       <ProductSideDish />
     </ProductContainer>

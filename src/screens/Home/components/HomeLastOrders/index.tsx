@@ -1,4 +1,4 @@
-import { lastOrders } from '@screens/Home/constants'
+import { lastOrderedProducts } from '@constants/mocks'
 
 import { ProductCard } from '@components/ProductCard'
 
@@ -9,10 +9,11 @@ export const HomeLastOrders = () => {
     <HomeLastOrdersContainer>
       <Title>Últimos pedidos</Title>
 
-      {lastOrders.map((item, index) => (
+      {lastOrderedProducts.map((item, index) => (
         <ProductCard
           key={index}
-          title={item.title}
+          id={item.id}
+          title={item.name}
           price={item.price}
           description={item.description}
         />

@@ -1,3 +1,5 @@
+import { ProductDescriptionProps } from '@screens/Product/components/ProductDescription/types'
+
 import {
   ProductDeliveryPrice,
   ProductDescriptionContainer,
@@ -7,12 +9,14 @@ import {
   SeparatorLine,
 } from './styles'
 
-export const ProductDescription = () => {
+export const ProductDescription = (props: ProductDescriptionProps) => {
+  const { product } = props
+
   return (
     <ProductDescriptionContainer>
-      <ProductTitle>Coxinha</ProductTitle>
+      <ProductTitle>{product.name}</ProductTitle>
       <SeparatorLine />
-      <ProductText>lalalalalalallala</ProductText>
+      <ProductText>{product.description}</ProductText>
       <SeparatorLine />
       <ProductProductionTime>
         24-32min | <ProductDeliveryPrice>Grátis</ProductDeliveryPrice>

@@ -1,8 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
+import { ticketMock } from '@constants/mocks'
+
+import { TicketDTO } from '@dtos/TicketDTO'
 
 import { Icon } from '@components/Icon'
 
-import { useTickets } from '@hooks/useTickets'
 import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { CartTicketProps } from './types'
@@ -20,15 +23,13 @@ import {
 export const CartTicket = (props: CartTicketProps) => {
   const { ticketId } = props
 
-  const { fetchGetAllTickets, fetchGetOneTicket, tickets, ticket } =
-    useTickets()
+  const [ticket, setTicket] = useState<TicketDTO>()
 
   const { handleNavigation } = useAppNavigation()
 
   useEffect(() => {
-    fetchGetOneTicket(ticketId)
-    fetchGetAllTickets()
-  }, [fetchGetAllTickets, fetchGetOneTicket, ticketId])
+    setTicket(ticketMock.find((t) => t.id === ticketId))
+  }, [ticketId])
 
   return (
     <TicketContainer>
@@ -39,8 +40,10 @@ export const CartTicket = (props: CartTicketProps) => {
             {ticket ? ticket.name : 'Cupom'}
           </TicketLeftSideTextTitle>
           <TicketLeftSideTextSubtitle>
-            {ticket ? ticket.description : tickets ? tickets.length : 'X'}{' '}
-            disponíveis
+            {ticket
+              ? ticket.description
+              : (ticketMock ? ticketMock.length : 'X') +
+                ' cupom(s) disponível(is)'}
           </TicketLeftSideTextSubtitle>
         </TicketLeftSideText>
       </TicketLeftSide>

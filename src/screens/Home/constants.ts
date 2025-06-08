@@ -48,21 +48,3 @@ export const homeFoodCategories: HomeFoodCategoriesType[] = [
     icon: 'Cake',
   },
 ]
-
-export const lastOrders = [
-  {
-    title: 'Café com leite',
-    description: 'Café expresso, leite e espuma de leite',
-    price: 9.9,
-  },
-  {
-    title: 'Café com leite',
-    description: 'Café expresso, leite e espuma de leite',
-    price: 9.9,
-  },
-  {
-    title: 'Café com leite',
-    description: 'Café expresso, leite e espuma de leite',
-    price: 9.9,
-  },
-]

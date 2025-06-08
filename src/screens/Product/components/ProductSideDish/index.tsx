@@ -1,4 +1,4 @@
-import { mockProducts } from '@constants/mocks'
+import { sideDishProducts } from '@constants/mocks'
 
 import { SideDish } from './components/SideDish'
 
@@ -17,7 +17,7 @@ export const ProductSideDish = () => {
         Escolha as opções abaixo
       </ProductSideDishSubtitle>
       <ProductSideDishList>
-        {mockProducts.map((mock) => (
+        {sideDishProducts.map((mock) => (
           <SideDish product={mock} key={mock.id} />
         ))}
       </ProductSideDishList>
