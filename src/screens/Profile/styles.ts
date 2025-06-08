@@ -14,3 +14,29 @@ export const ProfileContainer = styled(ScrollView).attrs({
     background-color: ${theme.COLORS.GRAY_900};
   `}
 `
+
+export const ProfileDescription = styled.View`
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+`
+
+export const ProfileImage = styled.Image`
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+`
+
+export const ProfileName = styled.Text`
+  ${({ theme }) => css`
+    font-family: ${theme.FONT_FAMILY.ROBOTO.ROBOTO_MEDIUM};
+    font-size: ${theme.FONT_SIZE.LG}px;
+    color: ${theme.COLORS.BLACK};
+  `}
+
+  flex: 1;
+  margin-left: 16px;
+`
