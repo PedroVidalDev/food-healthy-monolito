@@ -3,6 +3,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 export type MainStackNavigatorRoutes = {
   tickets: undefined
   payment: undefined
+  paymentDetails: undefined
   help: undefined
   bottomTabs: {
     screen: string
