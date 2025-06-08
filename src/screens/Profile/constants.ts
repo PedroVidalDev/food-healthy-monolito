@@ -4,7 +4,6 @@ type ProfileMenuOption = {
   title: string
   subtitle: string
   icon: keyof typeof PhosphorIcons
-  screen: string
 }
 
 export const ProfileMenuOptions: ProfileMenuOption[] = [
@@ -12,30 +11,25 @@ export const ProfileMenuOptions: ProfileMenuOption[] = [
     title: 'Meus Pedidos',
     subtitle: 'Veja todos os seus pedidos',
     icon: 'List',
-    screen: 'orders',
   },
   {
     title: 'Meus Endereços',
     subtitle: 'Gerencie seus endereços',
     icon: 'Gps',
-    screen: 'addresses',
   },
   {
     title: 'Meus Cartões',
     subtitle: 'Gerencie seus cartões de crédito',
     icon: 'CreditCard',
-    screen: 'cards',
   },
   {
     title: 'Configurações',
     subtitle: 'Ajustes e preferências da conta',
     icon: 'Gear',
-    screen: 'settings',
   },
   {
     title: 'Ajuda e Suporte',
     subtitle: 'Obtenha ajuda e suporte para sua conta',
     icon: 'UserCircle',
-    screen: 'help',
   },
 ]
