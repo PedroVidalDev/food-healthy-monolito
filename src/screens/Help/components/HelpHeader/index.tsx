@@ -26,7 +26,7 @@ export const HelpHeader = () => {
         <Icon color="BLACK" name="ArrowArcLeft" size={16} />
       </HelpHeaderRollback>
       <HelpHeaderSubtitle>Ajuda</HelpHeaderSubtitle>
-      <HelpHeaderHelp>Fechar</HelpHeaderHelp>
+      <HelpHeaderHelp onPress={handleGoBack}>Fechar</HelpHeaderHelp>
     </HelpHeaderContainer>
   )
 }
