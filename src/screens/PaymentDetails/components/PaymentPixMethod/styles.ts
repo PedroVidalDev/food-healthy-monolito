@@ -28,6 +28,8 @@ export const PixKeyText = styled.Text`
   `}
 `
 
+export const IconContainer = styled.Pressable``
+
 export const PixDescription = styled.Text`
   ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.MD}px;

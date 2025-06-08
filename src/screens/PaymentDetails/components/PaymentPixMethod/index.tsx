@@ -1,8 +1,14 @@
+import { Alert } from 'react-native'
 import { useEffect, useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import Clipboard from '@react-native-clipboard/clipboard'
+
+import { generateRandomPixKey } from '@utils/generateRandomPix'
 
 import { Icon } from '@components/Icon'
 
 import {
+  IconContainer,
   PaymentPixMethodContainer,
   PixDescription,
   PixKeyContainer,
@@ -11,13 +17,21 @@ import {
   PixTimeProgressBar,
   PixTimeText,
 } from './styles'
-import { Alert } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 
 export const PaymentPixMethod = () => {
+  const pixKey = generateRandomPixKey()
+
   const navigate = useNavigation()
 
   const [paymentTime, setPaymentTime] = useState(120)
+
+  const handleCopyPixKey = () => {
+    Clipboard.setString(pixKey)
+    Alert.alert(
+      'Chave copiada',
+      'A chave PIX aleatória foi copiada com sucesso. Agora resta ir para o seu banco favorito e realizar o pagamento.',
+    )
+  }
 
   useEffect(() => {
     if (paymentTime === 0) {
@@ -45,9 +59,11 @@ export const PaymentPixMethod = () => {
     <PaymentPixMethodContainer>
       <PixKeyContainer>
         <PixKeyText numberOfLines={1} ellipsizeMode="tail">
-          testestetetestestetedsadadadadadadsadsadsadasdas
+          {pixKey}
         </PixKeyText>
-        <Icon name="Copy" color="BLACK" size={24} />
+        <IconContainer onPress={handleCopyPixKey}>
+          <Icon name="Copy" color="BLACK" size={24} />
+        </IconContainer>
       </PixKeyContainer>
       <PixDescription>
         Copie a chave PIX acima! O tempo para você pagar acaba em:
