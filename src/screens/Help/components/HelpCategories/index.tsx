@@ -1,4 +1,7 @@
 import { Icon } from '@components/Icon'
+
+import { helpMenuOptions } from './constants'
+
 import {
   HelpCategoriasItem,
   HelpCategoriasItemText,
@@ -9,7 +12,6 @@ import {
   HelpCategoriesTitle,
   IconContainer,
 } from './styles'
-import { helpMenuOptions } from './constants'
 
 export const HelpCategories = () => {
   return (
