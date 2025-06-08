@@ -7,7 +7,7 @@ type ProfileMenuOption = {
   screen: string
 }
 
-export const ProfileMenuOptions: ProfileMenuOption[] = [
+export const profileMenuOptions: ProfileMenuOption[] = [
   {
     title: 'Meus Pedidos',
     subtitle: 'Veja todos os seus pedidos',
