@@ -11,19 +11,31 @@ import {
   PixTimeProgressBar,
   PixTimeText,
 } from './styles'
+import { Alert } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 export const PaymentPixMethod = () => {
-  const [paymentTime, setPaymentTime] = useState(120) // Initial time in seconds
+  const navigate = useNavigation()
+
+  const [paymentTime, setPaymentTime] = useState(120)
 
   useEffect(() => {
-    if (paymentTime === 0) return
+    if (paymentTime === 0) {
+      Alert.alert(
+        'Tempo acabou',
+        'Infelizmente seu tempo acabou, e o pagamento foi cancelado. Iremos te encaminhar para a página inicial.',
+      )
+      navigate.navigate('bottomTabs', {
+        page: 'home',
+      })
+    }
 
     const timer = setInterval(() => {
       setPaymentTime((prevTime) => prevTime - 1)
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [paymentTime])
+  }, [navigate, paymentTime])
 
   const minutes = Math.floor(paymentTime / 60)
   const seconds = paymentTime % 60
@@ -37,7 +49,9 @@ export const PaymentPixMethod = () => {
         </PixKeyText>
         <Icon name="Copy" color="BLACK" size={24} />
       </PixKeyContainer>
-      <PixDescription> O tempo para você pagar acaba em: </PixDescription>
+      <PixDescription>
+        Copie a chave PIX acima! O tempo para você pagar acaba em:
+      </PixDescription>
       <PixTimeContainer>
         <PixTimeText>
           0{minutes}:{formattedSeconds}
