@@ -1,4 +1,4 @@
-import { profileMenuOptions } from './constants'
+import { ProfileMenuOption, profileMenuOptions } from './constants'
 
 import { Icon } from '@components/Icon'
 
@@ -10,12 +10,19 @@ import {
   ProfileCategoriasItemTextTitle,
   ProfileCategoriasList,
 } from './styles'
+import { useNavigation } from '@react-navigation/native'
 
 export const ProfileMenuCategories = () => {
+  const navigate = useNavigation()
+
+  const handlePress = (option: ProfileMenuOption) => {
+    navigate.navigate(option.screen as never)
+  }
+
   return (
     <ProfileCategoriasList>
       {profileMenuOptions.map((option, index) => (
-        <ProfileCategoriasItem key={index}>
+        <ProfileCategoriasItem key={index} onPress={() => handlePress(option)}>
           <IconContainer>
             <Icon name={option.icon} size={24} color="BLACK" />
           </IconContainer>

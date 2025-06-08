@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import { MainStackNavigatorRoutes } from '@routes/types'
 
-import { Help, Payment, Product, Tickets } from '@screens/index'
+import { AboutUs, Help, Payment, Product, Tickets } from '@screens/index'
 
 import { MainBottomTabs } from '../MainBottomTabs'
 
@@ -16,6 +16,7 @@ export const MainStackNavigator = () => {
       <Screen name="tickets" component={Tickets} />
       <Screen name="payment" component={Payment} />
       <Screen name="product" component={Product} />
+      <Screen name="aboutUs" component={AboutUs} />
       <Screen name="help" component={Help} />
     </Navigator>
   )

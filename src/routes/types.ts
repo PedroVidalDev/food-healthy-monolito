@@ -9,6 +9,7 @@ export type MainStackNavigatorRoutes = {
     params: unknown
   }
   product: undefined
+  aboutUs: undefined
 }
 
 export type MainBottomTabsRoutes = {

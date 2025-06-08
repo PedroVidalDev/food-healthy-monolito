@@ -1,6 +1,6 @@
 import * as PhosphorIcons from 'phosphor-react-native'
 
-type ProfileMenuOption = {
+export type ProfileMenuOption = {
   title: string
   subtitle: string
   icon: keyof typeof PhosphorIcons
@@ -37,5 +37,11 @@ export const profileMenuOptions: ProfileMenuOption[] = [
     subtitle: 'Obtenha ajuda e suporte para sua conta',
     icon: 'UserCircle',
     screen: 'help',
+  },
+  {
+    title: 'Sobre Nós',
+    subtitle: 'Saiba mais sobre nossa empresa',
+    icon: 'Info',
+    screen: 'aboutUs',
   },
 ]
