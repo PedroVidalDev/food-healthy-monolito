@@ -1,16 +1,11 @@
-import { Icon } from '@components/Icon'
+import { Option } from '@components/Option'
 
 import { helpMenuOptions } from './constants'
 
 import {
-  HelpCategoriasItem,
-  HelpCategoriasItemText,
-  HelpCategoriasItemTextSubtitle,
-  HelpCategoriasItemTextTitle,
   HelpCategoriasList,
   HelpCategoriesContainer,
   HelpCategoriesTitle,
-  IconContainer,
 } from './styles'
 
 export const HelpCategories = () => {
@@ -19,19 +14,13 @@ export const HelpCategories = () => {
       <HelpCategoriesTitle>Categorias</HelpCategoriesTitle>
       <HelpCategoriasList>
         {helpMenuOptions.map((option, index) => (
-          <HelpCategoriasItem key={index}>
-            <IconContainer>
-              <Icon name={option.icon} size={24} color="BLACK" />
-            </IconContainer>
-            <HelpCategoriasItemText>
-              <HelpCategoriasItemTextTitle>
-                {option.title}
-              </HelpCategoriasItemTextTitle>
-              <HelpCategoriasItemTextSubtitle>
-                {option.subtitle}
-              </HelpCategoriasItemTextSubtitle>
-            </HelpCategoriasItemText>
-          </HelpCategoriasItem>
+          <Option
+            key={index}
+            icon={option.icon}
+            onPress={() => {}}
+            title={option.title}
+            description={option.subtitle}
+          />
         ))}
       </HelpCategoriasList>
     </HelpCategoriesContainer>

@@ -9,6 +9,7 @@ export const useAppNavigation = () => {
   }
 
   return {
+    navigate,
     handleNavigation,
   }
 }
