@@ -1,5 +1,7 @@
-import { Icon } from '@components/Icon'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+
+import { Icon } from '@components/Icon'
+
 import {
   SupportContainer,
   SupportDescription,
@@ -16,6 +18,7 @@ import {
 
 export const Support = () => {
   const insents = useSafeAreaInsets()
+
   return (
     <SupportContainer statusBarHeight={insents.top}>
       <SupportHeader>

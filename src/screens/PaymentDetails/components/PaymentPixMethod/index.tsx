@@ -1,7 +1,7 @@
 import { Alert } from 'react-native'
 import { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import Clipboard from '@react-native-clipboard/clipboard'
+// import Clipboard from '@react-native-clipboard/clipboard'
 
 import { generateRandomPixKey } from '@utils/generateRandomPix'
 
@@ -26,7 +26,7 @@ export const PaymentPixMethod = () => {
   const [paymentTime, setPaymentTime] = useState(120)
 
   const handleCopyPixKey = () => {
-    Clipboard.setString(pixKey)
+    // Clipboard.setString(pixKey)
     Alert.alert(
       'Chave copiada',
       'A chave PIX aleatória foi copiada com sucesso. Agora resta ir para o seu banco favorito e realizar o pagamento.',

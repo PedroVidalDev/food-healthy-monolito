@@ -1,3 +1,7 @@
+import { useNavigation } from '@react-navigation/native'
+
+import { AppNavigationRoutesProps } from '@routes/types'
+
 import { Icon } from '@components/Icon'
 
 import { helpMenuOptions } from './constants'
@@ -14,12 +18,18 @@ import {
 } from './styles'
 
 export const HelpCategories = () => {
+  const navigate = useNavigation<AppNavigationRoutesProps>()
+
+  const handleClick = () => {
+    navigate.navigate('support')
+  }
+
   return (
     <HelpCategoriesContainer>
       <HelpCategoriesTitle>Categorias</HelpCategoriesTitle>
       <HelpCategoriasList>
         {helpMenuOptions.map((option, index) => (
-          <HelpCategoriasItem key={index}>
+          <HelpCategoriasItem onPress={handleClick} key={index}>
             <IconContainer>
               <Icon name={option.icon} size={24} color="BLACK" />
             </IconContainer>

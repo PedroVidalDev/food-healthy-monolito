@@ -5,6 +5,7 @@ export type MainStackNavigatorRoutes = {
   payment: undefined
   paymentDetails: undefined
   help: undefined
+  support: undefined
   bottomTabs: {
     screen: string
     params: unknown

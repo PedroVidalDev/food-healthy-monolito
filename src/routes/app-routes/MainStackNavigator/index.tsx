@@ -8,6 +8,7 @@ import {
   Payment,
   PaymentDetails,
   Product,
+  Support,
   Tickets,
 } from '@screens/index'
 
@@ -26,6 +27,7 @@ export const MainStackNavigator = () => {
       <Screen name="product" component={Product} />
       <Screen name="aboutUs" component={AboutUs} />
       <Screen name="help" component={Help} />
+      <Screen name="support" component={Support} />
     </Navigator>
   )
 }
