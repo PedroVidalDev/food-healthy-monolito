@@ -13,7 +13,11 @@ export const PaymentDetails = ({ route }) => {
   return (
     <PaymentDetailsContainer statusBarHeight={insents.top}>
       <PaymentDetailsHeader />
-      {paymentType === 'pix' ? <PaymentPixMethod /> : <PaymentCardMethod />}
+      {paymentType === 'pix' ? (
+        <PaymentPixMethod />
+      ) : (
+        <PaymentCardMethod type={paymentType} />
+      )}
     </PaymentDetailsContainer>
   )
 }
