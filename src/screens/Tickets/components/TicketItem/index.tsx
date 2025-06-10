@@ -1,5 +1,9 @@
+import { useAppNavigation } from '@hooks/useAppNavigation'
+
 import { Icon } from '@components/Icon'
+
 import { TicketItemProps } from './types'
+
 import {
   DescriptionSpan,
   TicketDescriptionContainer,
@@ -8,16 +12,14 @@ import {
   TicketItemIconContainer,
   TicketItemTitle,
 } from './styles'
-import { useNavigation } from '@react-navigation/native'
-import { AppNavigationRoutesProps } from '@routes/types'
 
 export const TicketItem = (props: TicketItemProps) => {
   const { id, title, value } = props
 
-  const navigate = useNavigation<AppNavigationRoutesProps>()
+  const { navigate } = useAppNavigation()
 
   const handleTicketClick = (id: number) => {
-    navigate.navigate('bottomTabs', {
+    navigate('bottomTabs', {
       screen: 'cart',
       params: { ticketId: id },
     })

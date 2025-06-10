@@ -1,7 +1,8 @@
 import { Alert } from 'react-native'
 import { useEffect, useState } from 'react'
-import { useNavigation } from '@react-navigation/native'
 import * as Clipboard from 'expo-clipboard'
+
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { generateRandomPixKey } from '@utils/generateRandomPix'
 
@@ -21,7 +22,7 @@ import {
 export const PaymentPixMethod = () => {
   const [pixKey] = useState<string>(generateRandomPixKey())
 
-  const navigate = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const [paymentTime, setPaymentTime] = useState(120)
 
@@ -39,7 +40,7 @@ export const PaymentPixMethod = () => {
         'Tempo acabou',
         'Infelizmente seu tempo acabou, e o pagamento foi cancelado. Iremos te encaminhar para a página inicial.',
       )
-      navigate.navigate('bottomTabs', {
+      navigate('bottomTabs', {
         page: 'home',
       })
     }

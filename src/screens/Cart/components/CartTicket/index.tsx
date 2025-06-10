@@ -25,7 +25,7 @@ export const CartTicket = (props: CartTicketProps) => {
 
   const [ticket, setTicket] = useState<TicketDTO>()
 
-  const { handleNavigation } = useAppNavigation()
+  const { navigate } = useAppNavigation()
 
   useEffect(() => {
     setTicket(ticketMock.find((t) => t.id === ticketId))
@@ -47,7 +47,7 @@ export const CartTicket = (props: CartTicketProps) => {
           </TicketLeftSideTextSubtitle>
         </TicketLeftSideText>
       </TicketLeftSide>
-      <TicketTicketRightSide onPress={() => handleNavigation('tickets')}>
+      <TicketTicketRightSide onPress={() => navigate('tickets')}>
         <TicketRightSideText>
           {ticket ? 'Trocar' : 'Adicionar'}
         </TicketRightSideText>

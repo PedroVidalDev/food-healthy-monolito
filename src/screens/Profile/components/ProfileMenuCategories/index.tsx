@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { ProfileMenuOption, profileMenuOptions } from './constants'
 
@@ -7,10 +7,10 @@ import { Option } from '@components/Option'
 import { ProfileCategoriasList } from './styles'
 
 export const ProfileMenuCategories = () => {
-  const navigate = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const handlePress = (option: ProfileMenuOption) => {
-    navigate.navigate(option.screen as never)
+    navigate(option.screen as never)
   }
 
   return (

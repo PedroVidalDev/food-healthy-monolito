@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { Button } from '@components/Button'
@@ -7,7 +6,7 @@ import { CartItemList } from './components/CartItemList'
 import { CartHeader } from './components/CartHeader'
 import { CartSaleValues } from './components/CartSaleValues'
 
-import { AppNavigationRoutesProps } from '@routes/types'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { CartContainer, Separator } from './styles'
 
@@ -16,10 +15,10 @@ export const Cart = ({ route }) => {
 
   const { ticketId } = route.params || {}
 
-  const navigate = useNavigation<AppNavigationRoutesProps>()
+  const { navigate } = useAppNavigation()
 
   const handleGoToPayment = () => {
-    navigate.navigate('payment')
+    navigate('payment')
   }
 
   return (

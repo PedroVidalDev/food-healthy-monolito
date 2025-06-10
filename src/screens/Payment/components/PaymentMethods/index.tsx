@@ -1,14 +1,14 @@
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { Option } from '@components/Option'
 
 import { PaymentMethodsContainer } from './styles'
 
 export const PaymentMethods = () => {
-  const navigate = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const handleClick = (paymentType: 'pix' | 'credit' | 'debit') => {
-    navigate.navigate('paymentDetails', {
+    navigate('paymentDetails', {
       paymentType,
     })
   }
