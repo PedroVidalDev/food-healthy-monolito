@@ -16,6 +16,9 @@ export type MainStackNavigatorRoutes = {
     productId: number
   }
   aboutUs: undefined
+  appRules: {
+    type: 'terms' | 'privacy'
+  }
 }
 
 export type MainBottomTabsRoutes = {
