@@ -5,6 +5,7 @@ import { MainStackNavigatorRoutes } from '@routes/types'
 import {
   AboutUs,
   Help,
+  OrderConcluded,
   Payment,
   PaymentDetails,
   Product,
@@ -23,6 +24,7 @@ export const MainStackNavigator = () => {
       <Screen name="tickets" component={Tickets} />
       <Screen name="payment" component={Payment} />
       <Screen name="paymentDetails" component={PaymentDetails} />
+      <Screen name="orderConcluded" component={OrderConcluded} />
       <Screen name="product" component={Product} />
       <Screen name="aboutUs" component={AboutUs} />
       <Screen name="help" component={Help} />

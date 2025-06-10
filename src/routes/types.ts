@@ -4,10 +4,11 @@ export type MainStackNavigatorRoutes = {
   tickets: undefined
   payment: undefined
   paymentDetails: undefined
+  orderConcluded: undefined
   help: undefined
   bottomTabs: {
     screen: string
-    params: unknown
+    params?: unknown
   }
   product: undefined
   aboutUs: undefined
