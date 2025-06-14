@@ -1,11 +1,13 @@
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
+import { SupportContent } from '@screens/Support/types'
+
 export type MainStackNavigatorRoutes = {
   tickets: undefined
   payment: undefined
   paymentDetails: undefined
   help: undefined
-  support: undefined
+  support: SupportContent
   bottomTabs: {
     screen: string
     params: unknown

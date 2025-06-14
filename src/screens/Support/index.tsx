@@ -1,9 +1,9 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-import { paymentSupport } from './constants'
-
 import { Icon } from '@components/Icon'
 import { SupportHeader } from './components/SupportHeader'
+
+import { SupportContent } from './types'
 
 import {
   SupportOptions,
@@ -17,8 +17,11 @@ import {
   SupportOptionsTextContainer,
 } from './styles'
 
-export const Support = () => {
+export const Support = ({ route }) => {
   const insents = useSafeAreaInsets()
+
+  const { description, subtopics, title } =
+    route.params || ({} as SupportContent)
 
   return (
     <SupportContainer statusBarHeight={insents.top}>
@@ -26,19 +29,14 @@ export const Support = () => {
 
       <SupportDescription>
         <SupportDescriptionBanner>
-          <Icon name="PixLogo" color="GRAY_200" />
-          <SupportDescriptionTitle>
-            {paymentSupport.title}
-          </SupportDescriptionTitle>
+          <SupportDescriptionTitle>{title}</SupportDescriptionTitle>
         </SupportDescriptionBanner>
       </SupportDescription>
       <TextSupportDescription>
-        <TextSupportDescription>
-          {paymentSupport.description}
-        </TextSupportDescription>
+        <TextSupportDescription>{description}</TextSupportDescription>
       </TextSupportDescription>
 
-      {paymentSupport.subtopics.map((subtopic, index) => (
+      {subtopics.map((subtopic, index) => (
         <SupportOptions key={index}>
           <Icon color="BLACK" name="ArrowArcRight" size={16} />
 

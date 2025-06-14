@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native'
 
+import { SupportContent } from '@screens/Support/types'
 import { AppNavigationRoutesProps } from '@routes/types'
 
 import { Icon } from '@components/Icon'
@@ -20,8 +21,8 @@ import {
 export const HelpCategories = () => {
   const navigate = useNavigation<AppNavigationRoutesProps>()
 
-  const handleClick = () => {
-    navigate.navigate('support')
+  const handleClick = (content: SupportContent) => {
+    navigate.navigate('support', content)
   }
 
   return (
@@ -29,7 +30,10 @@ export const HelpCategories = () => {
       <HelpCategoriesTitle>Categorias</HelpCategoriesTitle>
       <HelpCategoriasList>
         {helpMenuOptions.map((option, index) => (
-          <HelpCategoriasItem onPress={handleClick} key={index}>
+          <HelpCategoriasItem
+            onPress={() => handleClick(option.content)}
+            key={index}
+          >
             <IconContainer>
               <Icon name={option.icon} size={24} color="BLACK" />
             </IconContainer>
