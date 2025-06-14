@@ -38,7 +38,7 @@ export const Support = ({ route }) => {
 
       {subtopics.map((subtopic, index) => (
         <SupportOptions key={index}>
-          <Icon color="BLACK" name="ArrowArcRight" size={16} />
+          <Icon color="BLACK" name="CaretRight" size={16} />
 
           <SupportOptionsTextContainer>
             <SupportOptionsTitle> {subtopic.subtitle} </SupportOptionsTitle>
