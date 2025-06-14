@@ -1,4 +1,4 @@
 export type InputProps = {
   label: string
-  type?: 'default' | 'phone-pad' | 'numeric'
+  type?: 'default' | 'phone-pad' | 'numeric' | 'date'
 }

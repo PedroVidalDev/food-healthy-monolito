@@ -13,10 +13,10 @@ export const PaymentCardMethod = (props: PaymentCardMethodProps) => {
 
   return (
     <PaymentCardMethodContainer>
-      <Input label="Número do cartão" type="phone-pad" />
-      <Input label="Nome como impresso no cartão" type="phone-pad" />
-      <Input label="CVV" type="phone-pad" />
-      <Input label="Data de vencimento" type="phone-pad" />
+      <Input label="Número do cartão" type="numeric" />
+      <Input label="Nome como impresso no cartão" type="default" />
+      <Input label="CVV" type="numeric" />
+      <Input label="Data de vencimento" type="date" />
       <Button
         backgroundColor="PRIMARY"
         onPress={() => navigate('orderConcluded', { paymentMethod: type })}
