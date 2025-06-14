@@ -21,7 +21,7 @@ export const Support = ({ route }) => {
   const insents = useSafeAreaInsets()
 
   const { description, subtopics, title } =
-    route.params || ({} as SupportContent)
+    (route.params as SupportContent) || {}
 
   return (
     <SupportContainer statusBarHeight={insents.top}>
