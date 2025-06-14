@@ -1,14 +1,23 @@
 import { Option } from '@components/Option'
 
 import { helpMenuOptions } from './constants'
+import { SupportContent } from '@screens/Support/types'
+
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import {
   HelpCategoriasList,
-  HelpCategoriesContainer,
   HelpCategoriesTitle,
+  HelpCategoriesContainer,
 } from './styles'
 
 export const HelpCategories = () => {
+  const navigate = useAppNavigation()
+
+  const handleClick = (content: SupportContent) => {
+    navigate.navigate('support', content)
+  }
+
   return (
     <HelpCategoriesContainer>
       <HelpCategoriesTitle>Categorias</HelpCategoriesTitle>
@@ -17,7 +26,7 @@ export const HelpCategories = () => {
           <Option
             key={index}
             icon={option.icon}
-            onPress={() => {}}
+            onPress={() => handleClick(option.content)}
             title={option.title}
             description={option.subtitle}
           />
