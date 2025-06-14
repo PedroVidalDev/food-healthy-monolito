@@ -10,21 +10,26 @@ import {
   AboutUsText,
   IconContainer,
 } from './styles'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 export const AboutUs = () => {
   const insents = useSafeAreaInsets()
+
+  const { navigate } = useAppNavigation()
 
   return (
     <AboutUsContainer statusBarHeight={insents.top}>
       <AboutUsHeader />
       <AboutUsOptionsContainer>
-        <AboutUsOption>
+        <AboutUsOption onPress={() => navigate('appRules', { type: 'terms' })}>
           <IconContainer>
             <Icon name="Paperclip" color="BLACK" size={24} />
           </IconContainer>
           <AboutUsText> Termos de uso </AboutUsText>
         </AboutUsOption>
-        <AboutUsOption>
+        <AboutUsOption
+          onPress={() => navigate('appRules', { type: 'privacy' })}
+        >
           <IconContainer>
             <Icon name="Lock" color="BLACK" size={24} />
           </IconContainer>

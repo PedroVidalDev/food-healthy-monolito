@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import FoodImage from '@assets/food.png'
 
@@ -20,10 +20,10 @@ import {
 export const ProductCard = (props: ItemIconExpandedProps) => {
   const { id, title, description, price } = props
 
-  const navigation = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const handleNavigation = (productId: number) => {
-    navigation.navigate('product', {
+    navigate('product', {
       productId,
     })
   }

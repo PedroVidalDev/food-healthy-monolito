@@ -1,9 +1,7 @@
 import { useEffect } from 'react'
-import { useNavigation } from '@react-navigation/native'
 
 import { useGeolocation } from '@hooks/useGeolocation'
-
-import { AppNavigationRoutesProps } from '@routes/types'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { Icon } from '@components/Icon'
 
@@ -19,10 +17,10 @@ import {
 export const HomeHeader = () => {
   const { location, getCurrentLocation } = useGeolocation()
 
-  const navigate = useNavigation<AppNavigationRoutesProps>()
+  const { navigate } = useAppNavigation()
 
   const handleGoToCart = () => {
-    navigate.navigate('cart')
+    navigate('cart')
   }
 
   useEffect(() => {

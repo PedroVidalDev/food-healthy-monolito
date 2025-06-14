@@ -1,40 +1,28 @@
+import { useAppNavigation } from '@hooks/useAppNavigation'
+
 import { ProfileMenuOption, profileMenuOptions } from './constants'
 
-import { Icon } from '@components/Icon'
+import { Option } from '@components/Option'
 
-import {
-  IconContainer,
-  ProfileCategoriasItem,
-  ProfileCategoriasItemText,
-  ProfileCategoriasItemTextSubtitle,
-  ProfileCategoriasItemTextTitle,
-  ProfileCategoriasList,
-} from './styles'
-import { useNavigation } from '@react-navigation/native'
+import { ProfileCategoriasList } from './styles'
 
 export const ProfileMenuCategories = () => {
-  const navigate = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const handlePress = (option: ProfileMenuOption) => {
-    navigate.navigate(option.screen as never)
+    navigate(option.screen as never)
   }
 
   return (
     <ProfileCategoriasList>
       {profileMenuOptions.map((option, index) => (
-        <ProfileCategoriasItem key={index} onPress={() => handlePress(option)}>
-          <IconContainer>
-            <Icon name={option.icon} size={24} color="BLACK" />
-          </IconContainer>
-          <ProfileCategoriasItemText>
-            <ProfileCategoriasItemTextTitle>
-              {option.title}
-            </ProfileCategoriasItemTextTitle>
-            <ProfileCategoriasItemTextSubtitle>
-              {option.subtitle}
-            </ProfileCategoriasItemTextSubtitle>
-          </ProfileCategoriasItemText>
-        </ProfileCategoriasItem>
+        <Option
+          icon={option.icon}
+          onPress={() => handlePress(option)}
+          title={option.title}
+          description={option.subtitle}
+          key={index}
+        />
       ))}
     </ProfileCategoriasList>
   )

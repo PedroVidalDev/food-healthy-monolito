@@ -1,44 +1,31 @@
-import { Icon } from '@components/Icon'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
-import {
-  IconContainer,
-  PaymentMethod,
-  PaymentMethodsContainer,
-  PaymentText,
-} from './styles'
-import { useNavigation } from '@react-navigation/native'
+import { Option } from '@components/Option'
+
+import { PaymentMethodsContainer } from './styles'
 
 export const PaymentMethods = () => {
-  const navigate = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const handleClick = (paymentType: 'pix' | 'credit' | 'debit') => {
-    navigate.navigate('paymentDetails', {
+    navigate('paymentDetails', {
       paymentType,
     })
   }
 
   return (
     <PaymentMethodsContainer>
-      <PaymentMethod onPress={() => handleClick('pix')}>
-        <IconContainer>
-          <Icon name="PixLogo" color="BLACK" size={24} />
-        </IconContainer>
-        <PaymentText> Pix </PaymentText>
-      </PaymentMethod>
-
-      <PaymentMethod onPress={() => handleClick('credit')}>
-        <IconContainer>
-          <Icon name="CreditCard" color="BLACK" size={24} />
-        </IconContainer>
-        <PaymentText> Cartão de Crédito </PaymentText>
-      </PaymentMethod>
-
-      <PaymentMethod onPress={() => handleClick('debit')}>
-        <IconContainer>
-          <Icon name="Cardholder" color="BLACK" size={24} />
-        </IconContainer>
-        <PaymentText> Cartão de Débito </PaymentText>
-      </PaymentMethod>
+      <Option icon="PixLogo" onPress={() => handleClick('pix')} title="Pix" />
+      <Option
+        icon="CreditCard"
+        onPress={() => handleClick('credit')}
+        title="Cartão de Crédito"
+      />
+      <Option
+        icon="Cardholder"
+        onPress={() => handleClick('debit')}
+        title="Cartão de Débito"
+      />
     </PaymentMethodsContainer>
   )
 }

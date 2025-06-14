@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native'
+import { useAppNavigation } from '@hooks/useAppNavigation'
 
 import { Button } from '@components/Button'
 
@@ -9,10 +9,10 @@ import { ProductFooterContainer } from './styles'
 export const ProductFooter = (props: ProductFooterProps) => {
   const { price, id } = props
 
-  const navigate = useNavigation()
+  const { navigate } = useAppNavigation()
 
   const handleAddToCart = () => {
-    navigate.navigate('bottomTabs', {
+    navigate('bottomTabs', {
       screen: 'cart',
       params: {
         productId: id,

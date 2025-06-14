@@ -6,14 +6,22 @@ export type MainStackNavigatorRoutes = {
   tickets: undefined
   payment: undefined
   paymentDetails: undefined
+  orderConcluded: {
+    paymentMethod: string
+  }
   help: undefined
   support: SupportContent
   bottomTabs: {
     screen: string
-    params: unknown
+    params?: unknown
   }
-  product: undefined
+  product: {
+    productId: number
+  }
   aboutUs: undefined
+  appRules: {
+    type: 'terms' | 'privacy'
+  }
 }
 
 export type MainBottomTabsRoutes = {
