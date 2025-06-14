@@ -1,19 +1,20 @@
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
+import { paymentSupport } from './constants'
+
 import { Icon } from '@components/Icon'
+import { SupportHeader } from './components/SupportHeader'
 
 import {
+  SupportOptions,
   SupportContainer,
   SupportDescription,
-  SupportDescriptionBanner,
-  SupportDescriptionTitle,
-  SupportHeader,
-  SupportOptions,
   SupportOptionsText,
-  SupportOptionsTextContainer,
   SupportOptionsTitle,
   TextSupportDescription,
-  TextSupportHeader,
+  SupportDescriptionTitle,
+  SupportDescriptionBanner,
+  SupportOptionsTextContainer,
 } from './styles'
 
 export const Support = () => {
@@ -21,28 +22,32 @@ export const Support = () => {
 
   return (
     <SupportContainer statusBarHeight={insents.top}>
-      <SupportHeader>
-        <Icon color="BLACK" name="ArrowArcLeft" size={16} />
-        <TextSupportHeader> Ajuda </TextSupportHeader>
-      </SupportHeader>
+      <SupportHeader />
 
       <SupportDescription>
         <SupportDescriptionBanner>
           <Icon name="PixLogo" color="GRAY_200" />
-          <SupportDescriptionTitle> Pagamentos </SupportDescriptionTitle>
+          <SupportDescriptionTitle>
+            {paymentSupport.title}
+          </SupportDescriptionTitle>
         </SupportDescriptionBanner>
-
-        <TextSupportDescription> Bla Bla Bla pagar </TextSupportDescription>
       </SupportDescription>
+      <TextSupportDescription>
+        <TextSupportDescription>
+          {paymentSupport.description}
+        </TextSupportDescription>
+      </TextSupportDescription>
 
-      <SupportOptions>
-        <Icon color="BLACK" name="ArrowArcRight" size={16} />
+      {paymentSupport.subtopics.map((subtopic, index) => (
+        <SupportOptions key={index}>
+          <Icon color="BLACK" name="ArrowArcRight" size={16} />
 
-        <SupportOptionsTextContainer>
-          <SupportOptionsTitle> Métodos aceitos </SupportOptionsTitle>
-          <SupportOptionsText> Lorem ipsum </SupportOptionsText>
-        </SupportOptionsTextContainer>
-      </SupportOptions>
+          <SupportOptionsTextContainer>
+            <SupportOptionsTitle> {subtopic.subtitle} </SupportOptionsTitle>
+            <SupportOptionsText>{subtopic.text}</SupportOptionsText>
+          </SupportOptionsTextContainer>
+        </SupportOptions>
+      ))}
     </SupportContainer>
   )
 }

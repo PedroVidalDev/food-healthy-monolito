@@ -14,37 +14,44 @@ export const SupportContainer = styled(ScrollView).attrs({
     background-color: ${theme.COLORS.GRAY_900};
   `}
 `
-export const SupportHeader = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-`
 
-export const TextSupportHeader = styled.Text`
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
-  font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
-  color: ${({ theme }) => theme.COLORS.BLACK};
-`
 export const SupportDescription = styled.View`
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+
   width: 100%;
   flex-direction: column;
   align-items: center;
 `
 
 export const SupportDescriptionBanner = styled.View`
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+
   width: 100%;
+  height: 64px;
+
+  border-radius: 8px;
+
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   color: ${({ theme }) => theme.COLORS.PRIMARY_DARK};
 `
 
 export const SupportDescriptionTitle = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_SEMIBOLD};
   font-size: ${({ theme }) => theme.FONT_SIZE.XG}px;
+
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY_LIGHT};
+
+  justify-content: center;
 `
 
 export const TextSupportDescription = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_MEDIUM};
   font-size: ${({ theme }) => theme.FONT_SIZE.SM}px;
+
+  text-align: justify;
 `
 
 export const SupportOptions = styled.View`
@@ -58,7 +65,7 @@ export const SupportOptionsTextContainer = styled.View`
 `
 export const SupportOptionsTitle = styled.Text`
   flex-direction: column;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_SEMIBOLD};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.BALOO2.BALOO2_BOLD};
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
 `
 
