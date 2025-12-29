@@ -1,0 +1,9 @@
+CREATE TABLE tb_payments (
+    id BIGSERIAL PRIMARY KEY,
+    order_id BIGSERIAL NOT NULL,
+    payment_method ENUM('CREDIT_CARD', 'DEBIT_CARD', 'PIX') NOT NULL,
+    status ENUM('PENDING', 'COMPLETED', 'FAILED') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (order_id) REFERENCES tb_orders(id) ON DELETE CASCADE
+)

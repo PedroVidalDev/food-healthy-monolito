@@ -1,0 +1,10 @@
+CREATE TABLE tb_ticket_usages (
+    id BIGSERIAL PRIMARY KEY,
+    user_id BIGSERIAL NOT NULL,
+    ticket_id BIGSERIAL NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id) REFERENCES tb_users(id) ON DELETE CASCADE,
+    FOREIGN KEY (ticket_id) REFERENCES tb_tickets(id) ON DELETE CASCADE
+);
