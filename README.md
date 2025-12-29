@@ -9,5 +9,3 @@ Projeto para treino da linguagem Java para backend e uso de React Native para fr
 - Sprint JPA
 - Spring Security
 - Lombok
-
-## Diagrama
